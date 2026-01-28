@@ -20,6 +20,8 @@ export class SimulationStore {
   speed: SimulationSpeed = 1;
   isPlaying: boolean = false;
   energyChanges: EnergyChangeEvent[] = [];
+  interventionTokens: number = 3; // Per RESEARCH: "Assume 2-3 tokens per day"
+  interveningPatientId: string | null = null;
   private lastAppliedSlot: TimeSlot | null = null;
   private changeIdCounter = 0;
 
@@ -127,6 +129,52 @@ export class SimulationStore {
     this.speed = 1;
     this.energyChanges = [];
     this.lastAppliedSlot = null;
+    this.interventionTokens = 3;
+    this.interveningPatientId = null;
+  }
+
+  // Open intervention menu for a patient (auto-pauses)
+  startIntervention(patientId: string): void {
+    if (this.interventionTokens <= 0) return; // No tokens left
+    if (this.isDayComplete) return; // Can't intervene after day ends
+
+    this.interveningPatientId = patientId;
+    this.pause(); // Auto-pause per CONTEXT
+  }
+
+  // Cancel intervention without using token
+  cancelIntervention(): void {
+    this.interveningPatientId = null;
+    // Don't auto-resume - let player decide when to continue
+  }
+
+  // Apply intervention: change patient's current slot activity
+  applyIntervention(newActivityId: string | null): void {
+    if (!this.interveningPatientId) return;
+    if (this.interventionTokens <= 0) return;
+
+    const gameStore = getGameStore();
+
+    // Update the schedule for current slot
+    gameStore.assignActivity(
+      this.interveningPatientId,
+      this.currentSlot,
+      newActivityId
+    );
+
+    // Consume token
+    this.interventionTokens--;
+
+    // Close menu
+    this.interveningPatientId = null;
+
+    // Auto-resume after intervention
+    this.play();
+  }
+
+  // Get whether a patient can be intervened
+  canIntervene(_patientId: string): boolean {
+    return this.interventionTokens > 0 && !this.isDayComplete;
   }
 }
 
