@@ -13,7 +13,7 @@ This prototype tests whether the Schedule-Observe-Adjust loop is engaging for ma
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - MobX stores, data types, and mode switching shell
-- [ ] **Phase 2: Schedule Mode** - Player assigns activities to time slots for each patient
+- [x] **Phase 2: Schedule Mode** - Player assigns activities to time slots for each patient
 - [ ] **Phase 3: Observe Mode** - Simulation playback with time controls and visual feedback
 - [ ] **Phase 4: Day End Summary** - Feedback screen showing outcomes and enabling next day
 - [ ] **Phase 5: Patient Systems** - Energy mechanics, synergies, and intervention tokens
@@ -48,9 +48,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Schedule state infrastructure and grid layout with time slots as rows, patients as columns
-- [ ] 02-02-PLAN.md — Drag-drop activity assignment with click-to-assign fallback and clear functionality
-- [ ] 02-03-PLAN.md — Energy prediction display in cells and headers, Start Day modal and mode transition
+- [x] 02-01-PLAN.md — Schedule state infrastructure and grid layout with time slots as rows, patients as columns
+- [x] 02-02-PLAN.md — Drag-drop activity assignment with click-to-assign fallback and clear functionality
+- [x] 02-03-PLAN.md — Energy prediction display in cells and headers, Start Day modal and mode transition
 
 ### Phase 3: Observe Mode
 **Goal**: Players watch the scheduled day unfold with control over playback
@@ -111,7 +111,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
-| 2. Schedule Mode | 0/3 | Not started | - |
+| 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
 | 3. Observe Mode | 0/4 | Not started | - |
 | 4. Day End Summary | 0/3 | Not started | - |
 | 5. Patient Systems | 0/4 | Not started | - |
