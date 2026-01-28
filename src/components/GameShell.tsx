@@ -75,7 +75,7 @@ export const GameShell = observer(function GameShell() {
       </div>
 
       {/* Drag overlay renders in portal - always on top */}
-      <DragOverlay>
+      <DragOverlay dropAnimation={null}>
         {activeActivity ? (
           <div className="px-4 py-3 bg-base-200 border border-base-300 rounded-lg shadow-lg cursor-grabbing">
             <div className="flex items-center justify-between gap-4">
