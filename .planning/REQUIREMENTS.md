@@ -16,7 +16,7 @@ Requirements for the prototype. Each maps to roadmap phases.
 
 ### Schedule Mode
 
-- [ ] **SCHED-01**: Player sees a time slot grid showing 3 slots × patients
+- [ ] **SCHED-01**: Player sees a time slot grid showing 3 slots x patients
 - [ ] **SCHED-02**: Player can assign activities to time slots for each patient
 - [ ] **SCHED-03**: UI shows predicted Overskudd after each scheduled activity
 - [ ] **SCHED-04**: Player can click "Start Day" to commit schedule and begin observation
@@ -30,7 +30,7 @@ Requirements for the prototype. Each maps to roadmap phases.
 
 ### Day End Summary
 
-- [ ] **END-01**: Summary shows Overskudd change per patient (start → end)
+- [ ] **END-01**: Summary shows Overskudd change per patient (start -> end)
 - [ ] **END-02**: Summary reveals discoveries about patients (personality hints, preferences)
 - [ ] **END-03**: Player can click "Continue" to advance to next day's scheduling
 - [ ] **END-04**: Summary shows intervention tokens used and their effects
@@ -84,33 +84,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STATE-01 | TBD | Pending |
-| STATE-02 | TBD | Pending |
-| STATE-03 | TBD | Pending |
-| STATE-04 | TBD | Pending |
-| SCHED-01 | TBD | Pending |
-| SCHED-02 | TBD | Pending |
-| SCHED-03 | TBD | Pending |
-| SCHED-04 | TBD | Pending |
-| OBS-01 | TBD | Pending |
-| OBS-02 | TBD | Pending |
-| OBS-03 | TBD | Pending |
-| OBS-04 | TBD | Pending |
-| END-01 | TBD | Pending |
-| END-02 | TBD | Pending |
-| END-03 | TBD | Pending |
-| END-04 | TBD | Pending |
-| END-05 | TBD | Pending |
-| PAT-01 | TBD | Pending |
-| PAT-02 | TBD | Pending |
-| PAT-03 | TBD | Pending |
-| PAT-04 | TBD | Pending |
+| STATE-01 | Phase 1 | Pending |
+| STATE-02 | Phase 1 | Pending |
+| STATE-03 | Phase 1 | Pending |
+| STATE-04 | Phase 1 | Pending |
+| SCHED-01 | Phase 2 | Pending |
+| SCHED-02 | Phase 2 | Pending |
+| SCHED-03 | Phase 2 | Pending |
+| SCHED-04 | Phase 2 | Pending |
+| OBS-01 | Phase 3 | Pending |
+| OBS-02 | Phase 3 | Pending |
+| OBS-03 | Phase 3 | Pending |
+| OBS-04 | Phase 3 | Pending |
+| END-01 | Phase 4 | Pending |
+| END-02 | Phase 4 | Pending |
+| END-03 | Phase 4 | Pending |
+| END-04 | Phase 4 | Pending |
+| END-05 | Phase 4 | Pending |
+| PAT-01 | Phase 5 | Pending |
+| PAT-02 | Phase 5 | Pending |
+| PAT-03 | Phase 5 | Pending |
+| PAT-04 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21 ⚠️
+- Mapped to phases: 21
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-28*
-*Last updated: 2026-01-28 after initial definition*
+*Last updated: 2026-01-28 after roadmap creation*
