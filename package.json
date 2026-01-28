@@ -1,0 +1,30 @@
+{
+  "name": "lifelines-prototype",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "lucide-react": "0.562.0",
+    "mobx": "6.15.0",
+    "mobx-react-observer": "1.1.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.18",
+    "@types/react": "19.2.5",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.1.1",
+    "babel-plugin-react-compiler": "1.0.0",
+    "daisyui": "5.5.14",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3",
+    "vite": "npm:rolldown-vite@7.2.5"
+  }
+}
