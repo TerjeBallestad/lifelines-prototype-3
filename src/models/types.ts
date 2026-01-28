@@ -16,3 +16,9 @@ export interface ActivityData {
   energyCost: number; // negative = costs energy, positive = restores
   color: MTGColor;    // activity's natural affinity
 }
+
+export interface ScheduleEntry {
+  patientId: string;
+  timeSlot: TimeSlot;
+  activityId: string | null;
+}

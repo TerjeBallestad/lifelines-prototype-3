@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, observable } from 'mobx';
 import { Patient } from '../models/Patient';
 import { Activity } from '../models/Activity';
 import type { GameMode, TimeSlot } from '../models/types';
@@ -9,6 +9,7 @@ export class GameStore {
   currentMode: GameMode = 'schedule';
   patients: Patient[] = [];
   activities: Activity[] = [];
+  schedule: Map<string, string | null> = observable.map();
 
   constructor() {
     makeAutoObservable(this);
@@ -56,6 +57,32 @@ export class GameStore {
 
   setMode(mode: GameMode): void {
     this.currentMode = mode;
+  }
+
+  // Schedule management methods
+  private getScheduleKey(patientId: string, slot: TimeSlot): string {
+    return `${patientId}-${slot}`;
+  }
+
+  assignActivity(patientId: string, slot: TimeSlot, activityId: string | null): void {
+    const key = this.getScheduleKey(patientId, slot);
+    this.schedule.set(key, activityId);
+  }
+
+  clearAssignment(patientId: string, slot: TimeSlot): void {
+    const key = this.getScheduleKey(patientId, slot);
+    this.schedule.set(key, null);
+  }
+
+  getAssignment(patientId: string, slot: TimeSlot): Activity | null {
+    const key = this.getScheduleKey(patientId, slot);
+    const activityId = this.schedule.get(key);
+    if (!activityId) return null;
+    return this.activities.find((a) => a.id === activityId) ?? null;
+  }
+
+  clearAllAssignments(): void {
+    this.schedule.clear();
   }
 }
 
