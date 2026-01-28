@@ -4,6 +4,7 @@ import { useGameStore } from '../../stores/GameStore';
 import { TimeControls } from './TimeControls';
 import { Timeline } from './Timeline';
 import { PatientObserve } from './PatientObserve';
+import { InterventionMenu } from './InterventionMenu';
 
 export const ObserveView = observer(function ObserveView() {
   const gameStore = useGameStore();
@@ -27,6 +28,9 @@ export const ObserveView = observer(function ObserveView() {
           ))}
         </div>
       </div>
+
+      {/* Intervention menu overlay */}
+      <InterventionMenu />
     </div>
   );
 });

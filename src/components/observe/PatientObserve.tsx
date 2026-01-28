@@ -35,6 +35,12 @@ export const PatientObserve = observer(function PatientObserve({
   // Get current activity based on simulation slot
   const currentActivity = gameStore.getAssignment(patient.id, simStore.currentSlot);
 
+  function handleClick() {
+    if (simStore.canIntervene(patient.id)) {
+      simStore.startIntervention(patient.id);
+    }
+  }
+
   // Get energy changes for this patient
   const patientEnergyChanges = simStore.energyChanges.filter(
     (c) => c.patientId === patient.id,
@@ -53,10 +59,13 @@ export const PatientObserve = observer(function PatientObserve({
 
   return (
     <div
+      onClick={handleClick}
       className={clsx(
-        'card relative border-l-4 bg-base-200 p-4 transition-shadow',
+        'card relative border-l-4 bg-base-200 p-4 transition-shadow cursor-pointer hover:bg-base-300',
         colorMap[patient.primaryColor] || 'border-l-gray-400',
         glowMap[patient.energyStatus],
+        // Dim if no tokens available
+        !simStore.canIntervene(patient.id) && 'opacity-75 cursor-not-allowed',
       )}
     >
       {/* Floating energy changes */}

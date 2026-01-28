@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { Play, Pause, FastForward } from 'lucide-react';
+import { Play, Pause, FastForward, Sparkles } from 'lucide-react';
 import { useSimulationStore } from '../../stores/SimulationStore';
 
 export const TimeControls = observer(function TimeControls() {
@@ -40,6 +40,12 @@ export const TimeControls = observer(function TimeControls() {
       >
         <FastForward size={20} />
       </button>
+
+      {/* Intervention tokens */}
+      <div className="flex items-center gap-1 ml-2 text-base-content/60">
+        <Sparkles size={16} className="text-warning" />
+        <span className="text-sm font-medium">{store.interventionTokens}</span>
+      </div>
     </div>
   );
 });
