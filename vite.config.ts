@@ -1,19 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-import observerPlugin from 'mobx-react-observer/babel-plugin'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+import observerPlugin from 'mobx-react-observer/babel-plugin';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: [
-          'babel-plugin-react-compiler',
-          observerPlugin(),
-        ],
+        plugins: ['babel-plugin-react-compiler', observerPlugin()],
       },
     }),
     tailwindcss(),
   ],
-})
+});
