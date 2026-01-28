@@ -61,13 +61,13 @@ Plans:
   2. Player can play, pause, and speed up simulation (1x, 4x, skip to end)
   3. Floating numbers (+5, -10) appear when energy changes during activities
   4. Player can use intervention tokens to redirect a patient mid-day (limited uses)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01: Simulation engine (precompute day events)
-- [ ] 03-02: Timeline playback with time controls
-- [ ] 03-03: Visual feedback (floating numbers, patient movement)
-- [ ] 03-04: Intervention token system
+- [ ] 03-01-PLAN.md — Simulation infrastructure (SimulationStore, game loop hook, ObserveView container)
+- [ ] 03-02-PLAN.md — Time controls and timeline (play/pause, 1x/4x speed, skip, clock display)
+- [ ] 03-03-PLAN.md — Visual feedback (floating energy numbers, patient activity progress, card glow)
+- [ ] 03-04-PLAN.md — Intervention token system (click patient, pause, swap activity, token management)
 
 ### Phase 4: Day End Summary
 **Goal**: Players receive feedback on the day and can advance to the next
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
-| 3. Observe Mode | 0/4 | Not started | - |
+| 3. Observe Mode | 0/4 | Planned | - |
 | 4. Day End Summary | 0/3 | Not started | - |
 | 5. Patient Systems | 0/4 | Not started | - |
 
