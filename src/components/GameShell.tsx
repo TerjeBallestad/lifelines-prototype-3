@@ -3,6 +3,7 @@ import { useGameStore } from '../stores/GameStore';
 import { DayHeader } from './DayHeader';
 import { PatientGrid } from './PatientGrid';
 import { ActivityList } from './ActivityList';
+import { ScheduleGrid } from './schedule/ScheduleGrid';
 
 export const GameShell = observer(function GameShell() {
   const gameStore = useGameStore();
@@ -15,9 +16,10 @@ export const GameShell = observer(function GameShell() {
 
       {/* Main content area */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Patient grid - main area */}
+        {/* Main content area */}
         <main className="flex-1 overflow-auto">
           <PatientGrid />
+          {showSidebar && <ScheduleGrid />}
         </main>
 
         {/* Activity sidebar - right side, only in schedule mode */}
