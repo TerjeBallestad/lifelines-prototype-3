@@ -2,3 +2,46 @@
 @plugin 'daisyui' {
   themes: dracula --default;
 }
+
+/* Patient card glow animations based on energy state */
+@keyframes pulse-glow-high {
+  0%,
+  100% {
+    box-shadow: 0 0 8px oklch(0.76 0.18 140 / 30%);
+  }
+  50% {
+    box-shadow: 0 0 16px oklch(0.76 0.18 140 / 50%);
+  }
+}
+
+@keyframes pulse-glow-medium {
+  0%,
+  100% {
+    box-shadow: 0 0 5px oklch(0.83 0.16 84 / 20%);
+  }
+  50% {
+    box-shadow: 0 0 10px oklch(0.83 0.16 84 / 40%);
+  }
+}
+
+@keyframes pulse-glow-low {
+  0%,
+  100% {
+    box-shadow: 0 0 8px oklch(0.71 0.19 22 / 30%);
+  }
+  50% {
+    box-shadow: 0 0 16px oklch(0.71 0.19 22 / 50%);
+  }
+}
+
+.patient-glow-high {
+  animation: pulse-glow-high 2s ease-in-out infinite;
+}
+
+.patient-glow-medium {
+  animation: pulse-glow-medium 2.5s ease-in-out infinite;
+}
+
+.patient-glow-low {
+  animation: pulse-glow-low 1.5s ease-in-out infinite;
+}
