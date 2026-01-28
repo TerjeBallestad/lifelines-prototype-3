@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - MobX stores, data types, and mode switching shell
 - [x] **Phase 2: Schedule Mode** - Player assigns activities to time slots for each patient
-- [ ] **Phase 3: Observe Mode** - Simulation playback with time controls and visual feedback
+- [x] **Phase 3: Observe Mode** - Simulation playback with time controls and visual feedback
 - [ ] **Phase 4: Day End Summary** - Feedback screen showing outcomes and enabling next day
 - [ ] **Phase 5: Patient Systems** - Energy mechanics, synergies, and intervention tokens
 
@@ -67,7 +67,7 @@ Plans:
 - [x] 03-01-PLAN.md — Simulation infrastructure (SimulationStore, game loop hook, ObserveView container)
 - [x] 03-02-PLAN.md — Time controls and timeline (play/pause, 1x/4x speed, skip, clock display)
 - [x] 03-03-PLAN.md — Visual feedback (floating energy numbers, patient activity progress, card glow)
-- [ ] 03-04-PLAN.md — Intervention token system (click patient, pause, swap activity, token management)
+- [x] 03-04-PLAN.md — Intervention token system (click patient, pause, swap activity, token management)
 
 ### Phase 4: Day End Summary
 **Goal**: Players receive feedback on the day and can advance to the next
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
-| 3. Observe Mode | 3/4 | In progress | - |
+| 3. Observe Mode | 4/4 | ✓ Complete | 2026-01-28 |
 | 4. Day End Summary | 0/3 | Not started | - |
 | 5. Patient Systems | 0/4 | Not started | - |
 

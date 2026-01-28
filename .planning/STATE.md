@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 3 - Observe Mode (visual feedback complete)
+**Current focus:** Phase 3 - Observe Mode COMPLETE
 
 ## Current Position
 
 Phase: 3 of 5 (Observe Mode)
-Plan: 3 of 4 in phase
-Status: In progress
-Last activity: 2026-01-28 — Completed 03-03-PLAN.md (Visual Feedback)
+Plan: 4 of 4 in phase
+Status: Phase complete
+Last activity: 2026-01-28 — Completed 03-04-PLAN.md (Intervention System)
 
-Progress: [========..] 59%
+Progress: [==========] 59%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 3.1 min
-- Total execution time: 28 min
+- Total execution time: 31 min
 
 **By Phase:**
 
@@ -29,11 +29,11 @@ Progress: [========..] 59%
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
-| 03-observe-mode | 3 | 6 min | 2 min |
+| 03-observe-mode | 4 | 9 min | 2.25 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-03 (5 min), 03-01 (2 min), 03-02 (1 min), 03-03 (3 min)
-- Trend: Phase 03 executing efficiently with focused component scopes
+- Last 5 plans: 03-01 (2 min), 03-02 (1 min), 03-03 (3 min), 03-04 (3 min)
+- Trend: Phase 03 completed efficiently with focused component scopes
 
 *Updated after each plan completion*
 
@@ -70,6 +70,9 @@ Recent decisions affecting current work:
 - Energy changes apply at slot boundaries in SimulationStore
 - Glow animation speed inversely proportional to energy state
 - OKLCH colors in CSS for glow effects matching DaisyUI theme
+- 3 intervention tokens per day (midpoint of 2-3 range from RESEARCH)
+- Auto-pause on intervention open, auto-resume on apply
+- Cancel intervention preserves tokens (no penalty for opening menu)
 
 ### Pending Todos
 
@@ -82,5 +85,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 03-03-PLAN.md (Visual Feedback)
+Stopped at: Completed 03-04-PLAN.md (Intervention System) - Phase 03 complete
 Resume file: None
