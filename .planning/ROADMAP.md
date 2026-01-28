@@ -65,8 +65,8 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Simulation infrastructure (SimulationStore, game loop hook, ObserveView container)
-- [ ] 03-02-PLAN.md — Time controls and timeline (play/pause, 1x/4x speed, skip, clock display)
-- [ ] 03-03-PLAN.md — Visual feedback (floating energy numbers, patient activity progress, card glow)
+- [x] 03-02-PLAN.md — Time controls and timeline (play/pause, 1x/4x speed, skip, clock display)
+- [x] 03-03-PLAN.md — Visual feedback (floating energy numbers, patient activity progress, card glow)
 - [ ] 03-04-PLAN.md — Intervention token system (click patient, pause, swap activity, token management)
 
 ### Phase 4: Day End Summary
@@ -112,7 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
-| 3. Observe Mode | 1/4 | In progress | - |
+| 3. Observe Mode | 3/4 | In progress | - |
 | 4. Day End Summary | 0/3 | Not started | - |
 | 5. Patient Systems | 0/4 | Not started | - |
 

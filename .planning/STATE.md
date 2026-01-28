@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 3 - Observe Mode (simulation infrastructure complete)
+**Current focus:** Phase 3 - Observe Mode (visual feedback complete)
 
 ## Current Position
 
 Phase: 3 of 5 (Observe Mode)
-Plan: 2 of 4 in phase
+Plan: 3 of 4 in phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 03-02-PLAN.md (Time Control UI)
+Last activity: 2026-01-28 — Completed 03-03-PLAN.md (Visual Feedback)
 
-Progress: [========..] 53%
+Progress: [========..] 59%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 3.1 min
-- Total execution time: 25 min
+- Total execution time: 28 min
 
 **By Phase:**
 
@@ -29,11 +29,11 @@ Progress: [========..] 53%
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
-| 03-observe-mode | 2 | 3 min | 1.5 min |
+| 03-observe-mode | 3 | 6 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (3 min), 02-03 (5 min), 03-01 (2 min), 03-02 (1 min)
-- Trend: Phase 03 executing faster due to focused component scopes
+- Last 5 plans: 02-03 (5 min), 03-01 (2 min), 03-02 (1 min), 03-03 (3 min)
+- Trend: Phase 03 executing efficiently with focused component scopes
 
 *Updated after each plan completion*
 
@@ -66,6 +66,10 @@ Recent decisions affecting current work:
 - DaisyUI join component for grouped speed buttons
 - Clock uses 12-hour format (8 AM to 8 PM)
 - tabular-nums for stable clock width
+- motion library for React animations (ESM-native framer-motion successor)
+- Energy changes apply at slot boundaries in SimulationStore
+- Glow animation speed inversely proportional to energy state
+- OKLCH colors in CSS for glow effects matching DaisyUI theme
 
 ### Pending Todos
 
@@ -78,5 +82,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 03-02-PLAN.md (Time Control UI)
+Stopped at: Completed 03-03-PLAN.md (Visual Feedback)
 Resume file: None
