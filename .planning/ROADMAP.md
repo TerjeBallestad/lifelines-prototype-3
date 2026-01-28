@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Player can see 2-3 patient cards with names, energy values, and color indicators
   3. Activity list shows 8-10 activities with energy cost/gain values
   4. Day number and time slot are visible in UI
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Project scaffolding and MobX store setup
-- [ ] 01-02: Patient and activity data models
-- [ ] 01-03: Mode switching shell and basic layout
+- [ ] 01-01-PLAN.md — Project scaffolding with Vite, React 19, MobX, Tailwind v4, DaisyUI
+- [ ] 01-02-PLAN.md — MobX stores and data models (patients, activities, types)
+- [ ] 01-03-PLAN.md — UI shell with mode switching, patient grid, activity sidebar
 
 ### Phase 2: Schedule Mode
 **Goal**: Players can create and commit daily schedules for all patients
