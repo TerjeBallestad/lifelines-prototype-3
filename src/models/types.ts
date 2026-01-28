@@ -1,6 +1,7 @@
 export type GameMode = 'schedule' | 'observe' | 'summary';
 export type TimeSlot = 'morning' | 'afternoon' | 'evening';
 export type MTGColor = 'white' | 'blue' | 'black' | 'red' | 'green';
+export type SimulationSpeed = 1 | 4;
 
 export interface PatientData {
   id: string;
