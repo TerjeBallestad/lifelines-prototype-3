@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 2 - Core Mechanics
+**Current focus:** Phase 2 Complete - Ready for Phase 3
 
 ## Current Position
 
-Phase: 2 of 5 (Schedule Mode)
-Plan: 2 of 3 in phase
-Status: In progress
-Last activity: 2026-01-28 — Completed 02-02-PLAN.md (Activity Assignment)
+Phase: 2 of 5 (Schedule Mode) - COMPLETE
+Plan: 3 of 3 in phase (all complete)
+Status: Phase 2 complete, ready for Phase 3
+Last activity: 2026-01-28 — Completed 02-03-PLAN.md (Energy Predictions and Start Day)
 
-Progress: [=====.....] 33%
+Progress: [======....] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 3.4 min
-- Total execution time: 17 min
+- Total plans completed: 6
+- Average duration: 3.5 min
+- Total execution time: 22 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 10 min | 3.3 min |
-| 02-schedule-mode | 2 | 7 min | 3.5 min |
+| 02-schedule-mode | 3 | 12 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (2 min), 01-03 (4 min), 02-01 (4 min), 02-02 (3 min)
+- Last 5 plans: 01-03 (4 min), 02-01 (4 min), 02-02 (3 min), 02-03 (5 min)
 - Trend: Consistent velocity
 
 *Updated after each plan completion*
@@ -56,6 +56,9 @@ Recent decisions affecting current work:
 - Grid layout uses CSS grid with dynamic column template based on patient count
 - 8px distance activation constraint on MouseSensor for click/drag coexistence
 - DndContext wraps entire layout for shared drag context between sidebar and main
+- DragOverlay renders in portal for proper z-index during drag
+- dropAnimation={null} for immediate disappear on drop
+- Energy predictions show even negative values (no clamping)
 
 ### Pending Todos
 
@@ -68,5 +71,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 02-02-PLAN.md (Activity Assignment)
+Stopped at: Completed 02-03-PLAN.md (Energy Predictions and Start Day) - Phase 2 complete
 Resume file: None
