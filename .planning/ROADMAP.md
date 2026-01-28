@@ -12,7 +12,7 @@ This prototype tests whether the Schedule-Observe-Adjust loop is engaging for ma
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - MobX stores, data types, and mode switching shell
+- [x] **Phase 1: Foundation** - MobX stores, data types, and mode switching shell
 - [ ] **Phase 2: Schedule Mode** - Player assigns activities to time slots for each patient
 - [ ] **Phase 3: Observe Mode** - Simulation playback with time controls and visual feedback
 - [ ] **Phase 4: Day End Summary** - Feedback screen showing outcomes and enabling next day
@@ -32,9 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffolding with Vite, React 19, MobX, Tailwind v4, DaisyUI
-- [ ] 01-02-PLAN.md — MobX stores and data models (patients, activities, types)
-- [ ] 01-03-PLAN.md — UI shell with mode switching, patient grid, activity sidebar
+- [x] 01-01-PLAN.md — Project scaffolding with Vite, React 19, MobX, Tailwind v4, DaisyUI
+- [x] 01-02-PLAN.md — MobX stores and data models (patients, activities, types)
+- [x] 01-03-PLAN.md — UI shell with mode switching, patient grid, activity sidebar
 
 ### Phase 2: Schedule Mode
 **Goal**: Players can create and commit daily schedules for all patients
@@ -110,7 +110,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 0/3 | Not started | - |
 | 3. Observe Mode | 0/4 | Not started | - |
 | 4. Day End Summary | 0/3 | Not started | - |
