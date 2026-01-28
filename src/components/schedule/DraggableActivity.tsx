@@ -1,5 +1,4 @@
 import { useDraggable } from '@dnd-kit/core';
-import { CSS } from '@dnd-kit/utilities';
 import { observer } from 'mobx-react-lite';
 import { ArrowUp, ArrowDown } from 'lucide-react';
 import { useUIStore } from '../../stores/UIStore';
@@ -23,16 +22,10 @@ export const DraggableActivity = observer(function DraggableActivity({
   activity,
 }: DraggableActivityProps) {
   const uiStore = useUIStore();
-  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+  const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id: `activity-${activity.id}`,
     data: { type: 'activity', activity },
   });
-
-  const style = transform
-    ? {
-        transform: CSS.Transform.toString(transform),
-      }
-    : undefined;
 
   const tint = colorToTint[activity.color] || '';
   const isRestoring = activity.isRestoring;
@@ -50,14 +43,13 @@ export const DraggableActivity = observer(function DraggableActivity({
   return (
     <div
       ref={setNodeRef}
-      style={style}
       {...listeners}
       {...attributes}
       onClick={handleClick}
       className={clsx(
         'px-4 py-3 border-b border-base-300 last:border-b-0 cursor-grab active:cursor-grabbing',
         tint,
-        isDragging && 'opacity-50 scale-105 z-50',
+        isDragging && 'opacity-50',
         isSelected && 'ring-2 ring-primary ring-inset bg-primary/10'
       )}
     >

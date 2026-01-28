@@ -1,4 +1,5 @@
-import { DndContext, DragEndEvent, MouseSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, DragOverlay, DragStartEvent, MouseSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useGameStore } from '../stores/GameStore';
 import { useUIStore } from '../stores/UIStore';
@@ -13,6 +14,7 @@ export const GameShell = observer(function GameShell() {
   const gameStore = useGameStore();
   const uiStore = useUIStore();
   const showSidebar = gameStore.currentMode === 'schedule';
+  const [activeActivity, setActiveActivity] = useState<Activity | null>(null);
 
   // Activation constraint prevents click from triggering drag
   const sensors = useSensors(
@@ -23,7 +25,15 @@ export const GameShell = observer(function GameShell() {
     })
   );
 
+  function handleDragStart(event: DragStartEvent) {
+    const activityData = event.active.data.current as { type: string; activity: Activity } | undefined;
+    if (activityData?.type === 'activity') {
+      setActiveActivity(activityData.activity);
+    }
+  }
+
   function handleDragEnd(event: DragEndEvent) {
+    setActiveActivity(null);
     const { active, over } = event;
     if (!over) return;
 
@@ -42,7 +52,7 @@ export const GameShell = observer(function GameShell() {
   }
 
   return (
-    <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+    <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
       <div className="h-screen flex flex-col bg-base-100">
         {/* Header */}
         <DayHeader />
@@ -63,6 +73,20 @@ export const GameShell = observer(function GameShell() {
           )}
         </div>
       </div>
+
+      {/* Drag overlay renders in portal - always on top */}
+      <DragOverlay>
+        {activeActivity ? (
+          <div className="px-4 py-3 bg-base-200 border border-base-300 rounded-lg shadow-lg cursor-grabbing">
+            <div className="flex items-center justify-between gap-4">
+              <span className="font-medium">{activeActivity.name}</span>
+              <span className={activeActivity.isRestoring ? 'text-success font-semibold' : 'text-error font-semibold'}>
+                {activeActivity.formattedCost}
+              </span>
+            </div>
+          </div>
+        ) : null}
+      </DragOverlay>
     </DndContext>
   );
 });
