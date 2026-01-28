@@ -1,6 +1,7 @@
-import { DndContext, DragEndEvent } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, MouseSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { observer } from 'mobx-react-lite';
 import { useGameStore } from '../stores/GameStore';
+import { useUIStore } from '../stores/UIStore';
 import { DayHeader } from './DayHeader';
 import { PatientGrid } from './PatientGrid';
 import { ActivityList } from './ActivityList';
@@ -10,7 +11,17 @@ import type { TimeSlot } from '../models/types';
 
 export const GameShell = observer(function GameShell() {
   const gameStore = useGameStore();
+  const uiStore = useUIStore();
   const showSidebar = gameStore.currentMode === 'schedule';
+
+  // Activation constraint prevents click from triggering drag
+  const sensors = useSensors(
+    useSensor(MouseSensor, {
+      activationConstraint: {
+        distance: 8, // 8px movement before drag starts
+      },
+    })
+  );
 
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
@@ -25,11 +36,13 @@ export const GameShell = observer(function GameShell() {
         cellData.timeSlot,
         activityData.activity.id
       );
+      // Clear selection after drag-drop as well
+      uiStore.clearSelection();
     }
   }
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
+    <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
       <div className="h-screen flex flex-col bg-base-100">
         {/* Header */}
         <DayHeader />
