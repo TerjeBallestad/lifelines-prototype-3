@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-01-28)
 ## Current Position
 
 Phase: 2 of 5 (Schedule Mode)
-Plan: 1 of 3 in phase
+Plan: 2 of 3 in phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 02-01-PLAN.md (Schedule Grid Infrastructure)
+Last activity: 2026-01-28 — Completed 02-02-PLAN.md (Activity Assignment)
 
-Progress: [====......] 27%
+Progress: [=====.....] 33%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 3.5 min
-- Total execution time: 14 min
+- Total plans completed: 5
+- Average duration: 3.4 min
+- Total execution time: 17 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 10 min | 3.3 min |
-| 02-schedule-mode | 1 | 4 min | 4 min |
+| 02-schedule-mode | 2 | 7 min | 3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (4 min), 01-02 (2 min), 01-03 (4 min), 02-01 (4 min)
+- Last 5 plans: 01-02 (2 min), 01-03 (4 min), 02-01 (4 min), 02-02 (3 min)
 - Trend: Consistent velocity
 
 *Updated after each plan completion*
@@ -54,6 +54,8 @@ Recent decisions affecting current work:
 - Schedule stored as Map<string, string|null> with key format patientId-timeSlot
 - Used observable.map() from mobx for reactive schedule state
 - Grid layout uses CSS grid with dynamic column template based on patient count
+- 8px distance activation constraint on MouseSensor for click/drag coexistence
+- DndContext wraps entire layout for shared drag context between sidebar and main
 
 ### Pending Todos
 
@@ -66,5 +68,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 02-01-PLAN.md (Schedule Grid Infrastructure)
+Stopped at: Completed 02-02-PLAN.md (Activity Assignment)
 Resume file: None
