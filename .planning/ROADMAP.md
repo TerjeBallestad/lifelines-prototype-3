@@ -45,12 +45,12 @@ Plans:
   2. Player can assign any activity to any time slot for any patient
   3. Predicted Overskudd after each activity is visible before committing
   4. Player can click "Start Day" to commit schedule and transition to Observe Mode
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Schedule grid layout and time slot components
-- [ ] 02-02: Activity assignment interaction
-- [ ] 02-03: Energy prediction display and Start Day transition
+- [ ] 02-01-PLAN.md — Schedule state infrastructure and grid layout with time slots as rows, patients as columns
+- [ ] 02-02-PLAN.md — Drag-drop activity assignment with click-to-assign fallback and clear functionality
+- [ ] 02-03-PLAN.md — Energy prediction display in cells and headers, Start Day modal and mode transition
 
 ### Phase 3: Observe Mode
 **Goal**: Players watch the scheduled day unfold with control over playback
