@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 2 Complete - Ready for Phase 3
+**Current focus:** Phase 3 - Observe Mode (simulation infrastructure complete)
 
 ## Current Position
 
-Phase: 2 of 5 (Schedule Mode) - COMPLETE
-Plan: 3 of 3 in phase (all complete)
-Status: Phase 2 complete, ready for Phase 3
-Last activity: 2026-01-28 — Completed 02-03-PLAN.md (Energy Predictions and Start Day)
+Phase: 3 of 5 (Observe Mode)
+Plan: 1 of 4 in phase
+Status: In progress
+Last activity: 2026-01-28 — Completed 03-01-PLAN.md (Simulation Infrastructure)
 
-Progress: [======....] 40%
+Progress: [=======...] 47%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 3.5 min
-- Total execution time: 22 min
+- Total plans completed: 7
+- Average duration: 3.4 min
+- Total execution time: 24 min
 
 **By Phase:**
 
@@ -29,10 +29,11 @@ Progress: [======....] 40%
 |-------|-------|-------|----------|
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
+| 03-observe-mode | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-03 (4 min), 02-01 (4 min), 02-02 (3 min), 02-03 (5 min)
-- Trend: Consistent velocity
+- Last 5 plans: 02-01 (4 min), 02-02 (3 min), 02-03 (5 min), 03-01 (2 min)
+- Trend: Consistent velocity, 03-01 faster due to focused scope
 
 *Updated after each plan completion*
 
@@ -46,7 +47,7 @@ Recent decisions affecting current work:
 - mobx-react-observer uses default export (not named export) for babel plugin
 - Tailwind v4 uses CSS-based config only (no tailwind.config.js)
 - DaisyUI configured via @plugin directive in CSS
-- Singleton stores with hook accessors (useGameStore, useUIStore)
+- Singleton stores with hook accessors (useGameStore, useUIStore, useSimulationStore)
 - Patient maxEnergy fixed at 10, energy status thresholds: high >= 6, medium >= 3, low < 3
 - Activity sidebar on right side of layout
 - MTG color border using border-l-4 for patient cards
@@ -59,6 +60,9 @@ Recent decisions affecting current work:
 - DragOverlay renders in portal for proper z-index during drag
 - dropAnimation={null} for immediate disappear on drop
 - Energy predictions show even negative values (no clamping)
+- Day duration 75000ms at 1x speed (midpoint of 60-90s range)
+- Delta capped at 100ms to prevent huge jumps after tab switch
+- Time slot thresholds at 0.33 and 0.66 for even thirds
 
 ### Pending Todos
 
@@ -71,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 02-03-PLAN.md (Energy Predictions and Start Day) - Phase 2 complete
+Stopped at: Completed 03-01-PLAN.md (Simulation Infrastructure)
 Resume file: None
