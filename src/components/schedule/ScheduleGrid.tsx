@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { useGameStore } from '../../stores/GameStore';
 import { TimeSlotRow } from './TimeSlotRow';
+import { StartDayModal } from './StartDayModal';
 import type { TimeSlot } from '../../models/types';
 
 const TIME_SLOTS: TimeSlot[] = ['morning', 'afternoon', 'evening'];
@@ -50,6 +51,11 @@ export const ScheduleGrid = observer(function ScheduleGrid() {
         {TIME_SLOTS.map((slot) => (
           <TimeSlotRow key={slot} timeSlot={slot} patients={patients} />
         ))}
+      </div>
+
+      {/* Start Day button */}
+      <div className="mt-6 flex justify-center">
+        <StartDayModal />
       </div>
     </div>
   );
