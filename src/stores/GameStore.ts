@@ -84,6 +84,41 @@ export class GameStore {
   clearAllAssignments(): void {
     this.schedule.clear();
   }
+
+  // Get energy after all scheduled activities for a patient
+  getPredictedEnergy(patientId: string): number {
+    const patient = this.patients.find((p) => p.id === patientId);
+    if (!patient) return 0;
+
+    const slots: TimeSlot[] = ['morning', 'afternoon', 'evening'];
+    let energy = patient.energy;
+
+    for (const slot of slots) {
+      const activity = this.getAssignment(patientId, slot);
+      if (activity) {
+        energy += activity.energyCost;
+      }
+    }
+    return energy;
+  }
+
+  // Get energy at a specific point in the day (after a given slot)
+  getEnergyAfterSlot(patientId: string, throughSlot: TimeSlot): number {
+    const patient = this.patients.find((p) => p.id === patientId);
+    if (!patient) return 0;
+
+    const slots: TimeSlot[] = ['morning', 'afternoon', 'evening'];
+    const slotIndex = slots.indexOf(throughSlot);
+    let energy = patient.energy;
+
+    for (let i = 0; i <= slotIndex; i++) {
+      const activity = this.getAssignment(patientId, slots[i]);
+      if (activity) {
+        energy += activity.energyCost;
+      }
+    }
+    return energy;
+  }
 }
 
 // Singleton instance

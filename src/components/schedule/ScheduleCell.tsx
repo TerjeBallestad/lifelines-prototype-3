@@ -60,8 +60,18 @@ export const ScheduleCell = observer(function ScheduleCell({
         <>
           <div className="text-center">
             <div className="font-medium text-sm">{activity.name}</div>
-            <div className="text-xs text-base-content/60">
-              ({activity.formattedCost})
+            {/* Energy delta with color coding */}
+            <div
+              className={clsx(
+                'text-xs font-medium',
+                activity.energyCost > 0 ? 'text-success' : activity.energyCost < 0 ? 'text-error' : 'text-base-content/60'
+              )}
+            >
+              ({activity.energyCost > 0 ? '+' : ''}{activity.energyCost})
+            </div>
+            {/* Running energy total after this slot */}
+            <div className="text-xs text-base-content/50 mt-0.5">
+              Energy: {gameStore.getEnergyAfterSlot(patientId, timeSlot)}
             </div>
           </div>
           {/* Clear button */}

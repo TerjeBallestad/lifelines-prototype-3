@@ -21,14 +21,30 @@ export const ScheduleGrid = observer(function ScheduleGrid() {
         <div className="text-center font-medium text-base-content/50 text-sm">
           Time
         </div>
-        {patients.map((patient) => (
-          <div
-            key={patient.id}
-            className="text-center font-medium text-sm truncate"
-          >
-            {patient.name}
-          </div>
-        ))}
+        {patients.map((patient) => {
+          const currentEnergy = patient.energy;
+          const predictedEnergy = gameStore.getPredictedEnergy(patient.id);
+          const energyDiff = predictedEnergy - currentEnergy;
+          // Color: green if higher, red if lower, neutral if same
+          const energyColorClass =
+            energyDiff > 0
+              ? 'text-success'
+              : energyDiff < 0
+                ? 'text-error'
+                : 'text-base-content';
+
+          return (
+            <div
+              key={patient.id}
+              className="text-center font-medium text-sm"
+            >
+              <span>{patient.name}</span>
+              <span className={`ml-1 ${energyColorClass}`}>
+                ({currentEnergy} &rarr; {predictedEnergy})
+              </span>
+            </div>
+          );
+        })}
 
         {/* Time slot rows */}
         {TIME_SLOTS.map((slot) => (
