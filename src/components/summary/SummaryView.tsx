@@ -57,9 +57,10 @@ export const SummaryView = observer(function SummaryView() {
         return (
           <ContinueButton
             onContinue={() => {
+              // Capture next day before advancing
               setNextDay(gameStore.currentDay + 1);
               setShowSplash(true);
-              gameStore.advanceToNextDay();
+              // Don't advance yet - wait for splash to complete
             }}
           />
         );
@@ -69,7 +70,14 @@ export const SummaryView = observer(function SummaryView() {
   // Show day splash overlay when transitioning
   if (showSplash) {
     return (
-      <DaySplash day={nextDay} onComplete={() => setShowSplash(false)} />
+      <DaySplash
+        day={nextDay}
+        onComplete={() => {
+          // Now advance to next day - this changes mode and unmounts SummaryView
+          gameStore.advanceToNextDay();
+          setShowSplash(false);
+        }}
+      />
     );
   }
 
