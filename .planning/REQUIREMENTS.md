@@ -96,11 +96,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OBS-02 | Phase 3 | Complete |
 | OBS-03 | Phase 3 | Complete |
 | OBS-04 | Phase 3 | Complete |
-| END-01 | Phase 4 | Pending |
-| END-02 | Phase 4 | Pending |
-| END-03 | Phase 4 | Pending |
-| END-04 | Phase 4 | Pending |
-| END-05 | Phase 4 | Pending |
+| END-01 | Phase 4 | Complete |
+| END-02 | Phase 4 | Complete |
+| END-03 | Phase 4 | Complete |
+| END-04 | Phase 4 | Complete |
+| END-05 | Phase 4 | Complete |
 | PAT-01 | Phase 5 | Pending |
 | PAT-02 | Phase 5 | Pending |
 | PAT-03 | Phase 5 | Pending |

@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - MobX stores, data types, and mode switching shell
 - [x] **Phase 2: Schedule Mode** - Player assigns activities to time slots for each patient
 - [x] **Phase 3: Observe Mode** - Simulation playback with time controls and visual feedback
-- [ ] **Phase 4: Day End Summary** - Feedback screen showing outcomes and enabling next day
+- [x] **Phase 4: Day End Summary** - Feedback screen showing outcomes and enabling next day
 - [ ] **Phase 5: Patient Systems** - Energy mechanics, synergies, and intervention tokens
 
 ## Phase Details
@@ -82,9 +82,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Store infrastructure (energy snapshot, day advancement), SummaryView container with step navigation, mode wiring
-- [ ] 04-02-PLAN.md — Content sections (EnergySection, XPSection, DiscoverySection, InterventionSection)
-- [ ] 04-03-PLAN.md — Day transition (DaySplash, ContinueButton, complete day loop)
+- [x] 04-01-PLAN.md — Store infrastructure (energy snapshot, day advancement), SummaryView container with step navigation, mode wiring
+- [x] 04-02-PLAN.md — Content sections (EnergySection, XPSection, DiscoverySection, InterventionSection)
+- [x] 04-03-PLAN.md — Day transition (DaySplash, ContinueButton, complete day loop)
 
 ### Phase 5: Patient Systems
 **Goal**: Patient behavior has strategic depth through energy, personalities, and synergies
@@ -113,7 +113,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
 | 3. Observe Mode | 4/4 | ✓ Complete | 2026-01-28 |
-| 4. Day End Summary | 0/3 | Planned | - |
+| 4. Day End Summary | 3/3 | ✓ Complete | 2026-01-29 |
 | 5. Patient Systems | 0/4 | Not started | - |
 
 ---
