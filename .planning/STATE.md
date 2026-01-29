@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-28)
 ## Current Position
 
 Phase: 4 of 5 (Day End Summary)
-Plan: 1 of 3 in phase
+Plan: 2 of 3 in phase
 Status: In progress
-Last activity: 2026-01-29 — Completed 04-01-PLAN.md (Summary Foundation)
+Last activity: 2026-01-29 — Completed 04-02-PLAN.md (Summary Content Sections)
 
-Progress: [===========-------] 65%
+Progress: [============------] 70%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 2.9 min
-- Total execution time: 33 min
+- Total plans completed: 12
+- Average duration: 3.3 min
+- Total execution time: 40 min
 
 **By Phase:**
 
@@ -30,11 +30,11 @@ Progress: [===========-------] 65%
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
 | 03-observe-mode | 4 | 9 min | 2.25 min |
-| 04-day-end-summary | 1 | 2 min | 2 min |
+| 04-day-end-summary | 2 | 9 min | 4.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (1 min), 03-03 (3 min), 03-04 (3 min), 04-01 (2 min)
-- Trend: Consistent fast execution with focused component scopes
+- Last 5 plans: 03-03 (3 min), 03-04 (3 min), 04-01 (2 min), 04-02 (7 min)
+- Trend: 04-02 took longer due to babel plugin debugging, but within acceptable range
 
 *Updated after each plan completion*
 
@@ -77,6 +77,9 @@ Recent decisions affecting current work:
 - Energy snapshot uses observable.map() for MobX reactivity
 - Step-through uses array index state, not enum tracking
 - View Summary button replaces TimeControls when day complete
+- Inner JSX components must be wrapped with observer() to prevent babel plugin duplicate import error
+- Mock XP gains at 15 XP per activity (Phase 5 implements real formula)
+- Card flip animation uses perspective: 1000px on container, transformStyle: preserve-3d on animated element
 
 ### Pending Todos
 
@@ -89,5 +92,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-29
-Stopped at: Completed 04-01-PLAN.md (Summary Foundation)
+Stopped at: Completed 04-02-PLAN.md (Summary Content Sections)
 Resume file: None
