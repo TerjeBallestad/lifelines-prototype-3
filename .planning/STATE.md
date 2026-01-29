@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 4 - Day End Summary
+**Current focus:** Phase 4 - Day End Summary COMPLETE
 
 ## Current Position
 
-Phase: 4 of 5 (Day End Summary)
-Plan: 2 of 3 in phase
-Status: In progress
-Last activity: 2026-01-29 — Completed 04-02-PLAN.md (Summary Content Sections)
+Phase: 4 of 5 (Day End Summary) - COMPLETE
+Plan: 3 of 3 in phase (phase complete)
+Status: Phase 4 complete, ready for Phase 5
+Last activity: 2026-01-29 — Completed 04-03-PLAN.md (Day Loop Complete)
 
-Progress: [============------] 70%
+Progress: [==============----] 76%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: 3.3 min
-- Total execution time: 40 min
+- Total plans completed: 13
+- Average duration: 3.4 min
+- Total execution time: 44 min
 
 **By Phase:**
 
@@ -30,11 +30,11 @@ Progress: [============------] 70%
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
 | 03-observe-mode | 4 | 9 min | 2.25 min |
-| 04-day-end-summary | 2 | 9 min | 4.5 min |
+| 04-day-end-summary | 3 | 13 min | 4.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (3 min), 03-04 (3 min), 04-01 (2 min), 04-02 (7 min)
-- Trend: 04-02 took longer due to babel plugin debugging, but within acceptable range
+- Last 5 plans: 03-04 (3 min), 04-01 (2 min), 04-02 (7 min), 04-03 (4 min)
+- Trend: Phase 4 complete with 3 plans totaling 13 min
 
 *Updated after each plan completion*
 
@@ -80,6 +80,9 @@ Recent decisions affecting current work:
 - Inner JSX components must be wrapped with observer() to prevent babel plugin duplicate import error
 - Mock XP gains at 15 XP per activity (Phase 5 implements real formula)
 - Card flip animation uses perspective: 1000px on container, transformStyle: preserve-3d on animated element
+- DaySplash animation: 0.5s text scale-up, 1.5s delay, 0.5s container fade (2s total)
+- Day transition: advanceToNextDay called after splash animation completes (prevents unmount cutoff)
+- useEffect with empty deps resets step index on SummaryView mount
 
 ### Pending Todos
 
@@ -92,5 +95,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-29
-Stopped at: Completed 04-02-PLAN.md (Summary Content Sections)
+Stopped at: Completed 04-03-PLAN.md (Day Loop Complete) - Phase 4 complete
 Resume file: None
