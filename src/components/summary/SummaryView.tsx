@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { EnergySection } from './EnergySection';
 import { XPSection } from './XPSection';
 import { DiscoverySection } from './DiscoverySection';
 import { InterventionSection } from './InterventionSection';
+import { ContinueButton } from './ContinueButton';
+import { DaySplash } from './DaySplash';
+import { useGameStore } from '../../stores/GameStore';
 
 type SummaryStep = 'energy' | 'xp' | 'discoveries' | 'interventions' | 'complete';
 
@@ -18,7 +21,15 @@ const STEP_LABELS: Record<SummaryStep, string> = {
 };
 
 export const SummaryView = observer(function SummaryView() {
+  const gameStore = useGameStore();
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const [showSplash, setShowSplash] = useState(false);
+  const [nextDay, setNextDay] = useState(1);
+
+  // Reset step to 0 when SummaryView mounts (prevents stale state from previous day)
+  useEffect(() => {
+    setCurrentStepIndex(0);
+  }, []);
 
   const currentStep = STEPS[currentStepIndex];
 
@@ -44,15 +55,23 @@ export const SummaryView = observer(function SummaryView() {
         return <InterventionSection />;
       case 'complete':
         return (
-          <div className="text-center">
-            <p className="text-lg font-semibold text-success">Day Complete!</p>
-            <p className="text-sm text-base-content/60 mt-2">
-              Ready to continue
-            </p>
-          </div>
+          <ContinueButton
+            onContinue={() => {
+              setNextDay(gameStore.currentDay + 1);
+              setShowSplash(true);
+              gameStore.advanceToNextDay();
+            }}
+          />
         );
     }
   };
+
+  // Show day splash overlay when transitioning
+  if (showSplash) {
+    return (
+      <DaySplash day={nextDay} onComplete={() => setShowSplash(false)} />
+    );
+  }
 
   return (
     <div className="flex flex-1 items-center justify-center p-8">
