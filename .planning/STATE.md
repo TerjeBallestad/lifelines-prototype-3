@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-28)
 
 **Core value:** The schedule-observe cycle must feel satisfying — player wants to see what happens, learn from it, and adjust.
-**Current focus:** Phase 3 Complete - Ready for Phase 4
+**Current focus:** Phase 4 - Day End Summary
 
 ## Current Position
 
-Phase: 3 of 5 (Observe Mode) - COMPLETE
-Plan: 4 of 4 in phase (all complete)
-Status: Phase 3 verified, ready for Phase 4
-Last activity: 2026-01-28 — Phase 3 verified (4/4 must-haves passed)
+Phase: 4 of 5 (Day End Summary)
+Plan: 1 of 3 in phase
+Status: In progress
+Last activity: 2026-01-29 — Completed 04-01-PLAN.md (Summary Foundation)
 
-Progress: [==========] 60%
+Progress: [===========-------] 65%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: 3.1 min
-- Total execution time: 31 min
+- Total plans completed: 11
+- Average duration: 2.9 min
+- Total execution time: 33 min
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [==========] 60%
 | 01-foundation | 3 | 10 min | 3.3 min |
 | 02-schedule-mode | 3 | 12 min | 4 min |
 | 03-observe-mode | 4 | 9 min | 2.25 min |
+| 04-day-end-summary | 1 | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (2 min), 03-02 (1 min), 03-03 (3 min), 03-04 (3 min)
-- Trend: Phase 03 completed efficiently with focused component scopes
+- Last 5 plans: 03-02 (1 min), 03-03 (3 min), 03-04 (3 min), 04-01 (2 min)
+- Trend: Consistent fast execution with focused component scopes
 
 *Updated after each plan completion*
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - 3 intervention tokens per day (midpoint of 2-3 range from RESEARCH)
 - Auto-pause on intervention open, auto-resume on apply
 - Cancel intervention preserves tokens (no penalty for opening menu)
+- Energy snapshot uses observable.map() for MobX reactivity
+- Step-through uses array index state, not enum tracking
+- View Summary button replaces TimeControls when day complete
 
 ### Pending Todos
 
@@ -84,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-28
-Stopped at: Completed 03-04-PLAN.md (Intervention System) - Phase 03 complete
+Last session: 2026-01-29
+Stopped at: Completed 04-01-PLAN.md (Summary Foundation)
 Resume file: None
