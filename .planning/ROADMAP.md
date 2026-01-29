@@ -79,12 +79,12 @@ Plans:
   3. Summary shows intervention tokens used and what they accomplished
   4. Summary shows skill/XP progress gained from activities
   5. Player can click "Continue" to advance to next day's Schedule Mode
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Summary view layout and stat displays
-- [ ] 04-02: Discovery and intervention reporting
-- [ ] 04-03: Day transition and next-day reset
+- [ ] 04-01-PLAN.md — Store infrastructure (energy snapshot, day advancement), SummaryView container with step navigation, mode wiring
+- [ ] 04-02-PLAN.md — Content sections (EnergySection, XPSection, DiscoverySection, InterventionSection)
+- [ ] 04-03-PLAN.md — Day transition (DaySplash, ContinueButton, complete day loop)
 
 ### Phase 5: Patient Systems
 **Goal**: Patient behavior has strategic depth through energy, personalities, and synergies
@@ -113,7 +113,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Foundation | 3/3 | ✓ Complete | 2026-01-28 |
 | 2. Schedule Mode | 3/3 | ✓ Complete | 2026-01-28 |
 | 3. Observe Mode | 4/4 | ✓ Complete | 2026-01-28 |
-| 4. Day End Summary | 0/3 | Not started | - |
+| 4. Day End Summary | 0/3 | Planned | - |
 | 5. Patient Systems | 0/4 | Not started | - |
 
 ---
