@@ -8,6 +8,7 @@ import { PatientGrid } from './PatientGrid';
 import { ActivityList } from './ActivityList';
 import { ScheduleGrid } from './schedule/ScheduleGrid';
 import { ObserveView } from './observe/ObserveView';
+import { SummaryView } from './summary/SummaryView';
 import type { Activity } from '../models/Activity';
 import type { TimeSlot } from '../models/types';
 
@@ -65,6 +66,7 @@ export const GameShell = observer(function GameShell() {
             <PatientGrid />
             {gameStore.currentMode === 'schedule' && <ScheduleGrid />}
             {gameStore.currentMode === 'observe' && <ObserveView />}
+            {gameStore.currentMode === 'summary' && <SummaryView />}
           </main>
 
           {/* Activity sidebar - right side, only in schedule mode */}

@@ -10,6 +10,7 @@ export const StartDayModal = observer(function StartDayModal() {
   const close = () => dialogRef.current?.close();
 
   const handleConfirm = () => {
+    gameStore.captureStartEnergy(); // Snapshot energy values before day starts
     gameStore.setMode('observe');
     close();
   };
