@@ -2,6 +2,7 @@ import { makeAutoObservable, observable } from 'mobx';
 import { Patient } from '../models/Patient';
 import { Activity } from '../models/Activity';
 import type { GameMode, TimeSlot } from '../models/types';
+import { getSimulationStore } from './SimulationStore';
 
 export class GameStore {
   currentDay: number = 1;
@@ -10,6 +11,7 @@ export class GameStore {
   patients: Patient[] = [];
   activities: Activity[] = [];
   schedule: Map<string, string | null> = observable.map();
+  startEnergySnapshot: Map<string, number> = observable.map();
 
   constructor() {
     makeAutoObservable(this);
@@ -118,6 +120,42 @@ export class GameStore {
       }
     }
     return energy;
+  }
+
+  // Capture current energy values for all patients at day start
+  captureStartEnergy(): void {
+    this.startEnergySnapshot.clear();
+    for (const patient of this.patients) {
+      this.startEnergySnapshot.set(patient.id, patient.energy);
+    }
+  }
+
+  // Advance to next day with partial energy recovery
+  advanceToNextDay(): void {
+    const simulationStore = getSimulationStore();
+    const maxEnergy = 10;
+
+    // Increment day
+    this.currentDay++;
+
+    // Apply partial energy recovery: +3, capped at maxEnergy
+    for (const patient of this.patients) {
+      patient.energy = Math.min(maxEnergy, patient.energy + 3);
+    }
+
+    // Handle intervention tokens: get 3 fresh, keep 1 unused from previous day (max 4)
+    const unusedTokens = simulationStore.interventionTokens;
+    const carryOver = Math.min(unusedTokens, 1); // Can carry over at most 1
+    simulationStore.reset(); // This resets tokens to 3
+    simulationStore.interventionTokens = 3 + carryOver; // 3 fresh + carryover
+
+    // Clear start energy snapshot
+    this.startEnergySnapshot.clear();
+
+    // Keep schedule intact (previous day's schedule pre-filled per CONTEXT)
+
+    // Switch to schedule mode
+    this.currentMode = 'schedule';
   }
 }
 

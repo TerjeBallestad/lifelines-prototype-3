@@ -23,3 +23,15 @@ export interface ScheduleEntry {
   timeSlot: TimeSlot;
   activityId: string | null;
 }
+
+export interface Discovery {
+  id: string;
+  patientId: string;
+  text: string; // e.g., "Ada seems to enjoy cooking"
+}
+
+export interface XPGain {
+  activityId: string;
+  activityName: string;
+  xp: number;
+}
