@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
+import { EnergySection } from './EnergySection';
+import { XPSection } from './XPSection';
+import { DiscoverySection } from './DiscoverySection';
+import { InterventionSection } from './InterventionSection';
 
 type SummaryStep = 'energy' | 'xp' | 'discoveries' | 'interventions' | 'complete';
 
@@ -31,38 +35,20 @@ export const SummaryView = observer(function SummaryView() {
   const renderStepContent = () => {
     switch (currentStep) {
       case 'energy':
-        return (
-          <div className="text-center text-base-content/60">
-            <p>Energy changes will appear here</p>
-            <p className="text-sm mt-2">Shows start vs end energy for each patient</p>
-          </div>
-        );
+        return <EnergySection />;
       case 'xp':
-        return (
-          <div className="text-center text-base-content/60">
-            <p>XP gains will appear here</p>
-            <p className="text-sm mt-2">Lists each activity with XP earned</p>
-          </div>
-        );
+        return <XPSection />;
       case 'discoveries':
-        return (
-          <div className="text-center text-base-content/60">
-            <p>Discoveries will appear here</p>
-            <p className="text-sm mt-2">Card flip reveals for new insights</p>
-          </div>
-        );
+        return <DiscoverySection />;
       case 'interventions':
-        return (
-          <div className="text-center text-base-content/60">
-            <p>Intervention usage will appear here</p>
-            <p className="text-sm mt-2">Shows tokens used during the day</p>
-          </div>
-        );
+        return <InterventionSection />;
       case 'complete':
         return (
           <div className="text-center">
             <p className="text-lg font-semibold text-success">Day Complete!</p>
-            <p className="text-sm text-base-content/60 mt-2">Ready to advance to the next day</p>
+            <p className="text-sm text-base-content/60 mt-2">
+              Ready to continue
+            </p>
           </div>
         );
     }

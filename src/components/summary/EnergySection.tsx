@@ -8,7 +8,8 @@ interface EnergyBarProps {
   maxEnergy?: number;
 }
 
-function EnergyBar({
+// Wrap with observer to prevent babel plugin from adding duplicate import
+const EnergyBar = observer(function EnergyBar({
   patientName,
   startEnergy,
   endEnergy,
@@ -59,7 +60,7 @@ function EnergyBar({
       </div>
     </div>
   );
-}
+});
 
 export const EnergySection = observer(function EnergySection() {
   const gameStore = useGameStore();
